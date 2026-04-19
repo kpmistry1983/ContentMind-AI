@@ -101,7 +101,7 @@ export default function SignupPage() {
               <h1 style={{ fontFamily: 'var(--font-manrope)', fontWeight: 700, fontSize: '1.75rem', color: 'var(--color-text-primary)', margin: 0, textAlign: 'center' }}>
                 Create your account
               </h1>
-              <p style={{ fontFamily: 'var(--font-inter)', fontSize: '0.95rem', color: '#a16207', textAlign: 'center', margin: 0 }}>
+              <p style={{ fontFamily: 'var(--font-inter)', fontSize: '0.95rem', color: '#9ca3af', textAlign: 'center', margin: 0 }}>
                 Cure content paralysis. Start free — no credit card required.
               </p>
             </div>
@@ -137,7 +137,7 @@ export default function SignupPage() {
             {/* Divider */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
               <div style={{ flex: 1, height: 1, background: 'rgba(245, 158, 11, 0.12)' }} />
-              <span style={{ fontSize: '0.8rem', color: '#92400e', fontFamily: 'var(--font-inter)' }}>or</span>
+              <span style={{ fontSize: '0.8rem', color: '#6b7280', fontFamily: 'var(--font-inter)' }}>or</span>
               <div style={{ flex: 1, height: 1, background: 'rgba(245, 158, 11, 0.12)' }} />
             </div>
 
@@ -177,7 +177,7 @@ export default function SignupPage() {
                 <button
                   type="button"
                   onClick={() => setShowPassword((v) => !v)}
-                  style={{ position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center', color: '#92400e' }}
+                  style={{ position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center', color: '#6b7280' }}
                   aria-label={showPassword ? 'Hide password' : 'Show password'}
                 >
                   {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
@@ -196,11 +196,11 @@ export default function SignupPage() {
             </form>
 
             {/* Trust signal */}
-            <p style={{ fontFamily: 'var(--font-inter)', fontSize: '0.78rem', color: '#78350f', textAlign: 'center', margin: 0 }}>
+            <p style={{ fontFamily: 'var(--font-inter)', fontSize: '0.78rem', color: '#6b7280', textAlign: 'center', margin: 0 }}>
               🔒 No credit card required · Cancel anytime
             </p>
 
-            <p style={{ fontFamily: 'var(--font-inter)', fontSize: '0.875rem', color: '#92400e', textAlign: 'center', margin: 0 }}>
+            <p style={{ fontFamily: 'var(--font-inter)', fontSize: '0.875rem', color: '#6b7280', textAlign: 'center', margin: 0 }}>
               Already have an account?{' '}
               <Link href="/login" style={{ color: 'var(--color-primary)', textDecoration: 'none', fontWeight: 500 }}>
                 Sign in →

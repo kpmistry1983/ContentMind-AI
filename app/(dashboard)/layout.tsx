@@ -28,7 +28,7 @@ export default async function DashboardLayout({
     <div className="flex h-screen overflow-hidden">
       {/* Sidebar */}
       <aside
-        style={{ width: 240, minWidth: 240, background: 'var(--color-surface-low)', borderRight: '1px solid rgba(245,158,11,0.08)' }}
+        style={{ width: 240, minWidth: 240, background: 'var(--color-surface-low)', borderRight: '1px solid rgba(255,255,255,0.06)' }}
         className="flex flex-col h-full"
       >
         {/* Logo */}
