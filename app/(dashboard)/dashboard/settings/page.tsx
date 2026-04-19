@@ -144,8 +144,8 @@ export default function SettingsPage() {
                   fontSize: '0.9375rem',
                   padding: '10px 14px',
                   borderRadius: 10,
-                  border: '1.5px solid var(--color-border, #e5e7eb)',
-                  background: 'var(--color-surface-input, #ffffff)',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                  background: 'var(--color-surface-high)',
                   color: 'var(--color-text-primary)',
                   outline: 'none',
                   width: '100%',
@@ -167,9 +167,9 @@ export default function SettingsPage() {
                   fontSize: '0.9375rem',
                   padding: '10px 14px',
                   borderRadius: 10,
-                  border: '1.5px solid var(--color-border, #e5e7eb)',
-                  background: '#f9fafb',
-                  color: '#9ca3af',
+                  border: '1px solid rgba(255,255,255,0.06)',
+                  background: 'rgba(255,255,255,0.03)',
+                  color: '#6b7280',
                   outline: 'none',
                   width: '100%',
                   boxSizing: 'border-box',
@@ -215,7 +215,7 @@ export default function SettingsPage() {
         </Card>
 
         {/* Danger Zone */}
-        <Card style={{ background: '#fff0ee' }}>
+        <Card style={{ background: 'rgba(252,165,165,0.06)', border: '1px solid rgba(252,165,165,0.15)' }}>
           <h2 style={{ fontFamily: 'var(--font-manrope)', fontSize: '1.125rem', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
             Danger Zone
           </h2>
