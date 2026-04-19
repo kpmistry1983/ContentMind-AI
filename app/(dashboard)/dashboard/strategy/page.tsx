@@ -79,7 +79,7 @@ export default function StrategyPage() {
       const { error } = await supabase.from('profiles').upsert({
         id: user.id,
         niche: form.niche,
-        brand_voice: form.brandVoice,
+        brand_voice: form.brandVoice ? form.brandVoice.toLowerCase() : null,
         target_audience: form.targetAudience,
         audience_pain_points: form.painPoints,
         content_pillars: form.contentPillars,
