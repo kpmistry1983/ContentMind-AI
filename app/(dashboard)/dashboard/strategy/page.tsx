@@ -297,7 +297,8 @@ export default function StrategyPage() {
                     width: 180,
                     height: 180,
                     borderRadius: '50%',
-                    background: '#e1e3e4',
+                    background: 'rgba(245, 158, 11, 0.1)',
+                    border: '2px solid rgba(245, 158, 11, 0.25)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -315,7 +316,7 @@ export default function StrategyPage() {
                       wordBreak: 'break-word',
                     }}
                   >
-                    {form.niche || <span style={{ color: '#9ca3af', fontWeight: 400 }}>Your niche</span>}
+                    {form.niche || <span style={{ color: '#6b7280', fontWeight: 400 }}>Your niche</span>}
                   </p>
                 </div>
               </div>
@@ -368,5 +369,5 @@ const inputStyle: React.CSSProperties = {
   fontSize: '0.875rem',
   color: 'var(--color-text-primary)',
   background: 'var(--color-surface-card)',
-  border: '1px solid #e5e7eb',
+  border: '1px solid rgba(255,255,255,0.08)',
 }

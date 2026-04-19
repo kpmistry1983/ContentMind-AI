@@ -30,18 +30,18 @@ function SkeletonCard() {
       className="animate-pulse rounded-2xl overflow-hidden flex"
       style={{ minHeight: 176, background: 'var(--color-surface-card)', boxShadow: 'var(--shadow-card)' }}
     >
-      <div className="w-1 shrink-0 bg-gray-200" />
+      <div className="w-1 shrink-0 bg-white/10" />
       <div className="flex-1 p-4 flex flex-col gap-3">
         <div className="flex justify-between">
-          <div className="h-5 bg-gray-200 rounded-full w-20" />
-          <div className="h-4 bg-gray-200 rounded w-12" />
+          <div className="h-5 bg-white/10 rounded-full w-20" />
+          <div className="h-4 bg-white/10 rounded w-12" />
         </div>
-        <div className="h-5 bg-gray-200 rounded w-3/4" />
-        <div className="h-4 bg-gray-200 rounded w-full" />
-        <div className="h-4 bg-gray-200 rounded w-4/5" />
+        <div className="h-5 bg-white/10 rounded w-3/4" />
+        <div className="h-4 bg-white/10 rounded w-full" />
+        <div className="h-4 bg-white/10 rounded w-4/5" />
         <div className="mt-auto flex gap-2">
-          <div className="h-8 bg-gray-200 rounded-xl w-32" />
-          <div className="h-8 bg-gray-200 rounded-xl w-24" />
+          <div className="h-8 bg-white/10 rounded-xl w-32" />
+          <div className="h-8 bg-white/10 rounded-xl w-24" />
         </div>
       </div>
     </div>
@@ -162,9 +162,9 @@ export default function CommandCenter({ initialMissions, niche, canGenerateMore:
         {allDone && (
           <div
             className="flex items-center justify-between rounded-xl px-4 py-3"
-            style={{ background: '#f0fdf4', borderLeft: '4px solid #22c55e' }}
+            style={{ background: 'rgba(34, 197, 94, 0.08)', borderLeft: '4px solid #22c55e' }}
           >
-            <p style={{ fontFamily: 'var(--font-inter)', fontSize: '0.875rem', color: '#166534' }}>
+            <p style={{ fontFamily: 'var(--font-inter)', fontSize: '0.875rem', color: '#86efac' }}>
               Today&apos;s missions complete. Your content is working.
             </p>
             {canGenerateMore && (
@@ -364,15 +364,13 @@ export default function CommandCenter({ initialMissions, niche, canGenerateMore:
           Strategic Insights
         </h2>
 
-        {/* Glassmorphism card 1 */}
+        {/* Insight card 1 */}
         <div
           className="rounded-2xl p-4"
           style={{
-            background: 'rgba(255,255,255,0.8)',
-            backdropFilter: 'blur(24px)',
-            WebkitBackdropFilter: 'blur(24px)',
-            boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
-            border: '1px solid rgba(255,255,255,0.6)',
+            background: 'var(--color-surface-card)',
+            boxShadow: 'var(--shadow-card)',
+            border: '1px solid rgba(245, 158, 11, 0.1)',
           }}
         >
           <div className="flex items-center gap-2 mb-2">
@@ -391,7 +389,7 @@ export default function CommandCenter({ initialMissions, niche, canGenerateMore:
             style={{
               fontFamily: 'var(--font-inter)',
               fontSize: '0.8rem',
-              color: '#6b7280',
+              color: '#9ca3af',
               lineHeight: 1.55,
             }}
           >
@@ -400,15 +398,13 @@ export default function CommandCenter({ initialMissions, niche, canGenerateMore:
           </p>
         </div>
 
-        {/* Glassmorphism card 2 */}
+        {/* Insight card 2 */}
         <div
           className="rounded-2xl p-4"
           style={{
-            background: 'rgba(255,255,255,0.8)',
-            backdropFilter: 'blur(24px)',
-            WebkitBackdropFilter: 'blur(24px)',
-            boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
-            border: '1px solid rgba(255,255,255,0.6)',
+            background: 'var(--color-surface-card)',
+            boxShadow: 'var(--shadow-card)',
+            border: '1px solid rgba(245, 158, 11, 0.1)',
           }}
         >
           <div className="flex items-center gap-2 mb-2">
@@ -427,7 +423,7 @@ export default function CommandCenter({ initialMissions, niche, canGenerateMore:
             style={{
               fontFamily: 'var(--font-inter)',
               fontSize: '0.8rem',
-              color: '#6b7280',
+              color: '#9ca3af',
               lineHeight: 1.55,
             }}
           >
@@ -440,7 +436,7 @@ export default function CommandCenter({ initialMissions, niche, canGenerateMore:
         <div className="flex flex-col items-center mt-2">
           <div
             className="flex items-center justify-center rounded-full"
-            style={{ width: 180, height: 180, background: '#e1e3e4' }}
+            style={{ width: 180, height: 180, background: 'rgba(245, 158, 11, 0.1)', border: '2px solid rgba(245, 158, 11, 0.25)' }}
           >
             <div className="text-center px-6">
               <p
