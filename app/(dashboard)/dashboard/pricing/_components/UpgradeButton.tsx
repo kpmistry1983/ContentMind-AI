@@ -31,14 +31,19 @@ export default function UpgradeButton({ plan, planName, currentTier }: Props) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ plan }),
       })
-      const data = await res.json()
+      const text = await res.text()
+      if (!res.ok) {
+        alert('Error ' + res.status + ': ' + text.substring(0, 300))
+        return
+      }
+      const data = JSON.parse(text)
       if (data.url) {
         window.location.href = data.url
       } else {
-        alert(data.error || 'Checkout failed. Check Vercel env vars for Stripe keys.')
+        alert(data.error || 'No checkout URL returned.')
       }
     } catch (err) {
-      alert('Network error. Please try again.')
+      alert('Caught: ' + String(err))
     } finally {
       setLoading(false)
     }
