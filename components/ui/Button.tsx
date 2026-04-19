@@ -5,6 +5,7 @@ interface ButtonProps {
   disabled?: boolean
   className?: string
   type?: 'button' | 'submit' | 'reset'
+  style?: React.CSSProperties
 }
 
 export default function Button({
@@ -14,6 +15,7 @@ export default function Button({
   disabled,
   className = '',
   type = 'button',
+  style: styleProp,
 }: ButtonProps) {
   const base =
     'inline-flex items-center justify-center gap-2 rounded-[12px] px-6 py-3 font-semibold transition-opacity duration-200 select-none'
@@ -41,7 +43,7 @@ export default function Button({
       onClick={onClick}
       disabled={disabled}
       className={`${base} ${variants[variant]} ${disabledStyles} ${variant === 'primary' ? 'hover:opacity-90' : ''} ${className}`}
-      style={{ ...primaryStyle, ...ghostStyle }}
+      style={{ ...primaryStyle, ...ghostStyle, ...styleProp }}
     >
       {disabled && (
         <svg

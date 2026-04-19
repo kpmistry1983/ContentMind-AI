@@ -53,9 +53,9 @@ export async function POST(req: NextRequest) {
   const aiResponse = await callOpenAI(
     REMIX_SYSTEM_PROMPT,
     buildRemixUserPrompt(seed_content, platforms, {
-      brand_voice: profile.brand_voice,
-      niche: profile.niche,
-      target_audience: profile.target_audience,
+      brand_voice: profile.brand_voice ?? '',
+      niche: profile.niche ?? '',
+      target_audience: profile.target_audience ?? '',
     }),
     REMIX_JSON_SCHEMA
   )
