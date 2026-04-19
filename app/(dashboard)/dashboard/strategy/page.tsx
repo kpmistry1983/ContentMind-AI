@@ -49,7 +49,7 @@ export default function StrategyPage() {
 
       const { data } = await supabase
         .from('profiles')
-        .select('niche, brand_voice, target_audience, pain_points, content_pillars, active_platforms')
+        .select('niche, brand_voice, target_audience, audience_pain_points, content_pillars, active_platforms')
         .eq('id', user.id)
         .single()
 
@@ -58,7 +58,7 @@ export default function StrategyPage() {
           niche: data.niche ?? '',
           brandVoice: (data.brand_voice as BrandVoice) ?? '',
           targetAudience: data.target_audience ?? '',
-          painPoints: (data.pain_points as [string, string, string]) ?? ['', '', ''],
+          painPoints: (data.audience_pain_points as [string, string, string]) ?? ['', '', ''],
           contentPillars: (data.content_pillars as string[]) ?? [],
           activePlatforms: (data.active_platforms as Platform[]) ?? [],
         })
@@ -81,7 +81,7 @@ export default function StrategyPage() {
         niche: form.niche,
         brand_voice: form.brandVoice,
         target_audience: form.targetAudience,
-        pain_points: form.painPoints,
+        audience_pain_points: form.painPoints,
         content_pillars: form.contentPillars,
         active_platforms: form.activePlatforms,
       })
