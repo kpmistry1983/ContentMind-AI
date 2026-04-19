@@ -5,10 +5,10 @@ import { usePathname } from 'next/navigation'
 import { Home, Shuffle, CreditCard, Settings } from 'lucide-react'
 
 const NAV_ITEMS = [
-  { label: 'Strategy', href: '/strategy', icon: Home },
-  { label: 'Remix Engine', href: '/remix', icon: Shuffle },
-  { label: 'Pricing', href: '/pricing', icon: CreditCard },
-  { label: 'Settings', href: '/settings', icon: Settings },
+  { label: 'Strategy', href: '/dashboard/strategy', icon: Home },
+  { label: 'Remix Engine', href: '/dashboard/remix', icon: Shuffle },
+  { label: 'Pricing', href: '/dashboard/pricing', icon: CreditCard },
+  { label: 'Settings', href: '/dashboard/settings', icon: Settings },
 ]
 
 export default function SidebarNav() {
