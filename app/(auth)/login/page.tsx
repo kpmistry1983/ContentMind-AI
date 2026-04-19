@@ -4,8 +4,8 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { Eye, EyeOff, Loader2 } from 'lucide-react'
-import { Card } from '@/components/ui/Card'
-import { Button } from '@/components/ui/Button'
+import Card from '@/components/ui/Card'
+import Button from '@/components/ui/Button'
 import { getSupabaseBrowserClient } from '@/lib/supabase/client'
 
 export default function LoginPage() {

@@ -2,7 +2,7 @@ import OpenAI from 'openai'
 
 export const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
 
-async function attempt(systemPrompt: string, userPrompt: string, jsonSchema?: object) {
+async function attempt(systemPrompt: string, userPrompt: string, jsonSchema?: Record<string, unknown>) {
   const response_format = jsonSchema
     ? { type: 'json_schema' as const, json_schema: { name: 'response', schema: jsonSchema, strict: true } }
     : { type: 'json_object' as const }
@@ -20,7 +20,7 @@ async function attempt(systemPrompt: string, userPrompt: string, jsonSchema?: ob
   return JSON.parse(completion.choices[0].message.content ?? '')
 }
 
-export async function callOpenAI(systemPrompt: string, userPrompt: string, jsonSchema?: object) {
+export async function callOpenAI(systemPrompt: string, userPrompt: string, jsonSchema?: Record<string, unknown>) {
   try {
     return await attempt(systemPrompt, userPrompt, jsonSchema)
   } catch {
