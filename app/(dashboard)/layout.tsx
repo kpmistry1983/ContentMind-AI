@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation'
 import Chip from '@/components/ui/Chip'
 import SidebarNav from '@/components/dashboard/SidebarNav'
+import ScrollToTop from '@/components/ui/ScrollToTop'
 import { getSupabaseServerClient } from '@/lib/supabase/server'
 
 export default async function DashboardLayout({
@@ -27,7 +28,7 @@ export default async function DashboardLayout({
     <div className="flex h-screen overflow-hidden">
       {/* Sidebar */}
       <aside
-        style={{ width: 240, minWidth: 240, background: '#f3f4f5' }}
+        style={{ width: 240, minWidth: 240, background: 'var(--color-surface-low)', borderRight: '1px solid rgba(245,158,11,0.08)' }}
         className="flex flex-col h-full"
       >
         {/* Logo */}
@@ -86,11 +87,13 @@ export default async function DashboardLayout({
 
       {/* Main content */}
       <main
-        style={{ background: '#f8f9fa', padding: '40px 48px' }}
+        style={{ background: 'var(--color-surface)', padding: '40px 48px' }}
         className="flex-1 overflow-y-auto"
       >
         {children}
       </main>
+
+      <ScrollToTop />
     </div>
   )
 }

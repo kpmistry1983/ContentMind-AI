@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0d0900;
+  --foreground: #fef3c7;
 
-  --color-primary: #4343d5;
-  --color-primary-end: #5d5fef;
-  --color-surface: #f8f9fa;
-  --color-surface-low: #f3f4f5;
-  --color-surface-card: #ffffff;
-  --color-surface-high: #e1e3e4;
-  --color-text-primary: #1A1F2E;
-  --color-text-secondary: #191c1d;
-  --color-chip-bg: #babbfe;
-  --color-chip-text: #474984;
-  --color-error: #ffb4ab;
-  --shadow-card: 0px 12px 32px rgba(25, 28, 29, 0.06);
-  --gradient-primary: linear-gradient(135deg, #4343d5, #5d5fef);
+  --color-primary: #f59e0b;
+  --color-primary-end: #fbbf24;
+  --color-surface: #0d0900;
+  --color-surface-low: #181100;
+  --color-surface-card: #1f1600;
+  --color-surface-high: #2c2000;
+  --color-text-primary: #fef3c7;
+  --color-text-secondary: #fde68a;
+  --color-chip-bg: rgba(120, 53, 15, 0.45);
+  --color-chip-text: #fbbf24;
+  --color-error: #fca5a5;
+  --shadow-card: 0px 12px 32px rgba(245, 158, 11, 0.08);
+  --gradient-primary: linear-gradient(135deg, #b45309, #f59e0b);
 }
 
 @theme inline {
@@ -24,13 +24,6 @@
   --color-foreground: var(--foreground);
   --font-heading: var(--font-manrope);
   --font-sans: var(--font-inter);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {

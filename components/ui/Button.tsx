@@ -29,7 +29,7 @@ export default function Button({
 
   const primaryStyle =
     variant === 'primary'
-      ? { background: 'var(--gradient-primary)', fontFamily: 'var(--font-manrope)' }
+      ? { background: 'var(--gradient-primary)', fontFamily: 'var(--font-manrope)', color: '#1a0a00' }
       : undefined
 
   const ghostStyle =
