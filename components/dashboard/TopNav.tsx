@@ -133,11 +133,11 @@ export default function TopNav({ avatarLetter, fullName, tier }: TopNavProps) {
 
         <button
           onClick={handleSignOut}
-          title="Sign out"
-          className="flex items-center justify-center p-2 transition-colors rounded-[10px] hover:bg-white/5"
+          className="flex items-center gap-1.5 px-3 py-2 transition-colors rounded-[10px] hover:bg-white/5"
           style={{ background: 'none', border: 'none', cursor: 'pointer' }}
         >
-          <LogOut size={16} style={{ color: '#6b7280' }} />
+          <LogOut size={14} style={{ color: '#6b7280' }} />
+          <span style={{ fontFamily: 'var(--font-inter)', fontSize: '0.8rem', color: '#6b7280' }}>Sign out</span>
         </button>
       </div>
     </header>

@@ -104,6 +104,7 @@ export default async function DashboardPage() {
         initialMissions={(missions ?? []) as Mission[]}
         niche={profile.niche ?? 'Your Niche'}
         canGenerateMore={canGenerateMore}
+        firstName={(profile.full_name ?? user.email ?? '').split(' ')[0]}
       />
     </>
   )
