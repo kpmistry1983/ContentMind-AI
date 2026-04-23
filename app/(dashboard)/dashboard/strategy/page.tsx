@@ -165,17 +165,17 @@ export default function StrategyPage() {
 
       <div className="max-w-2xl mx-auto">
         {/* Header */}
-        <div className="mb-8">
-          <h1 style={{ fontFamily: 'var(--font-manrope)', fontSize: '2rem', fontWeight: 700, color: 'var(--color-text-primary)', lineHeight: 1.2 }}>
+        <div className="mb-4">
+          <h1 style={{ fontFamily: 'var(--font-manrope)', fontSize: '1.6rem', fontWeight: 700, color: 'var(--color-text-primary)', lineHeight: 1.2 }}>
             Strategy Hub
           </h1>
-          <p style={{ fontFamily: 'var(--font-inter)', color: '#6b7280', marginTop: 6, fontSize: '0.95rem' }}>
+          <p style={{ fontFamily: 'var(--font-inter)', color: '#6b7280', marginTop: 4, fontSize: '0.875rem' }}>
             Build your content strategy in 5 quick steps.
           </p>
         </div>
 
         {/* Step progress */}
-        <div className="flex items-center mb-10">
+        <div className="flex items-center mb-5">
           {STEPS.map((label, i) => (
             <div key={i} className="flex items-center" style={{ flex: i < STEPS.length - 1 ? 1 : 'none' }}>
               <button type="button" onClick={() => setStep(i)} className="flex flex-col items-center gap-1.5">
@@ -201,16 +201,16 @@ export default function StrategyPage() {
         </div>
 
         {/* Card */}
-        <div style={{ background: 'var(--color-surface-card)', borderRadius: 16, border: '1px solid rgba(255,255,255,0.06)', padding: '32px' }}>
+        <div style={{ background: 'var(--color-surface-card)', borderRadius: 16, border: '1px solid rgba(255,255,255,0.06)', padding: '20px 24px' }}>
 
           {/* Step 0 — Niche */}
           {step === 0 && (
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4">
               <div>
                 <h2 style={stepTitleStyle}>Define your niche</h2>
                 <p style={stepDescStyle}>Complete the sentence — it forces clarity on exactly who you serve.</p>
               </div>
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-3">
                 <MadLibsRow prefix="I help" value={form.nicheParts.audience} onChange={v => setForm(f => ({ ...f, nicheParts: { ...f.nicheParts, audience: v } }))} placeholder="founders, marketers, coaches…" hint="Who is your primary audience?" />
                 <MadLibsRow prefix="who want" value={form.nicheParts.goal} onChange={v => setForm(f => ({ ...f, nicheParts: { ...f.nicheParts, goal: v } }))} placeholder="grow on LinkedIn, land more clients…" hint="What outcome do they want?" />
                 <MadLibsRow prefix="by" value={form.nicheParts.method} onChange={v => setForm(f => ({ ...f, nicheParts: { ...f.nicheParts, method: v } }))} placeholder="sharing systems & frameworks…" hint="How do you help them get there?" />
@@ -227,7 +227,7 @@ export default function StrategyPage() {
 
           {/* Step 1 — Brand Voice */}
           {step === 1 && (
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4">
               <div>
                 <h2 style={stepTitleStyle}>Pick your brand voice</h2>
                 <p style={stepDescStyle}>Choose the tone that feels most like you. You can always change it later.</p>
@@ -238,9 +238,9 @@ export default function StrategyPage() {
                   return (
                     <button key={v.label} type="button" onClick={() => setForm(f => ({ ...f, brandVoice: active ? '' : v.label }))}
                       className="flex items-center gap-4 w-full"
-                      style={{ background: active ? 'rgba(245,158,11,0.1)' : 'var(--color-surface-low)', border: active ? '1.5px solid var(--color-primary)' : '1.5px solid rgba(255,255,255,0.06)', borderRadius: 12, padding: '14px 16px', cursor: 'pointer', textAlign: 'left', transition: 'all 0.15s' }}
+                      style={{ background: active ? 'rgba(245,158,11,0.1)' : 'var(--color-surface-low)', border: active ? '1.5px solid var(--color-primary)' : '1.5px solid rgba(255,255,255,0.06)', borderRadius: 12, padding: '10px 14px', cursor: 'pointer', textAlign: 'left', transition: 'all 0.15s' }}
                     >
-                      <span style={{ fontSize: '1.4rem', lineHeight: 1 }}>{v.emoji}</span>
+                      <span style={{ fontSize: '1.2rem', lineHeight: 1 }}>{v.emoji}</span>
                       <div className="flex flex-col gap-0.5 flex-1">
                         <span style={{ fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '0.9rem', color: active ? 'var(--color-primary)' : 'var(--color-text-primary)' }}>{v.label}</span>
                         <span style={{ fontFamily: 'var(--font-inter)', fontSize: '0.78rem', color: '#9ca3af' }}>{v.description}</span>
@@ -259,7 +259,7 @@ export default function StrategyPage() {
 
           {/* Step 2 — Audience */}
           {step === 2 && (
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4">
               <div>
                 <h2 style={stepTitleStyle}>Know your audience</h2>
                 <p style={stepDescStyle}>Specificity is what separates forgettable content from content that converts.</p>
@@ -298,7 +298,7 @@ export default function StrategyPage() {
 
           {/* Step 3 — Content Pillars */}
           {step === 3 && (
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4">
               <div>
                 <h2 style={stepTitleStyle}>Choose your content pillars</h2>
                 <p style={stepDescStyle}>Pick up to 5 topics you&apos;ll own. Tap a suggestion or type your own.</p>
@@ -351,7 +351,7 @@ export default function StrategyPage() {
 
           {/* Step 4 — Platforms */}
           {step === 4 && (
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4">
               <div>
                 <h2 style={stepTitleStyle}>Where do you publish?</h2>
                 <p style={stepDescStyle}>Select every platform where you want to build an audience.</p>
@@ -363,9 +363,9 @@ export default function StrategyPage() {
                     <button key={p} type="button"
                       onClick={() => setForm(f => ({ ...f, activePlatforms: active ? f.activePlatforms.filter(x => x !== p) : [...f.activePlatforms, p] }))}
                       className="flex items-center gap-4 w-full"
-                      style={{ background: active ? 'rgba(245,158,11,0.1)' : 'var(--color-surface-low)', border: active ? '1.5px solid var(--color-primary)' : '1.5px solid rgba(255,255,255,0.06)', borderRadius: 12, padding: '14px 16px', cursor: 'pointer', textAlign: 'left', transition: 'all 0.15s' }}
+                      style={{ background: active ? 'rgba(245,158,11,0.1)' : 'var(--color-surface-low)', border: active ? '1.5px solid var(--color-primary)' : '1.5px solid rgba(255,255,255,0.06)', borderRadius: 12, padding: '10px 14px', cursor: 'pointer', textAlign: 'left', transition: 'all 0.15s' }}
                     >
-                      <span style={{ fontSize: '1.3rem', lineHeight: 1 }}>{PLATFORM_ICONS[p]}</span>
+                      <span style={{ fontSize: '1.2rem', lineHeight: 1 }}>{PLATFORM_ICONS[p]}</span>
                       <span style={{ fontFamily: 'var(--font-inter)', fontWeight: 500, fontSize: '0.9rem', flex: 1, color: active ? 'var(--color-primary)' : 'var(--color-text-primary)' }}>{p}</span>
                       {active && (
                         <div style={{ width: 20, height: 20, borderRadius: '50%', background: 'var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -382,7 +382,7 @@ export default function StrategyPage() {
         </div>
 
         {/* Navigation */}
-        <div className="flex items-center justify-between mt-6">
+        <div className="flex items-center justify-between mt-4">
           <button type="button" onClick={() => setStep(s => s - 1)}
             style={{ opacity: step === 0 ? 0 : 1, pointerEvents: step === 0 ? 'none' : 'auto' }}
             className="flex items-center gap-2 px-4 py-2 rounded-xl transition-colors hover:bg-white/5"
