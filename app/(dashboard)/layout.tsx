@@ -1,6 +1,5 @@
 import { redirect } from 'next/navigation'
-import Chip from '@/components/ui/Chip'
-import SidebarNav from '@/components/dashboard/SidebarNav'
+import TopNav from '@/components/dashboard/TopNav'
 import ScrollToTop from '@/components/ui/ScrollToTop'
 import { getSupabaseServerClient } from '@/lib/supabase/server'
 
@@ -25,65 +24,8 @@ export default async function DashboardLayout({
   const avatarLetter = fullName.charAt(0).toUpperCase() || '?'
 
   return (
-    <div className="flex h-screen overflow-hidden">
-      {/* Sidebar */}
-      <aside
-        style={{ width: 240, minWidth: 240, background: 'var(--color-surface-low)', borderRight: '1px solid rgba(255,255,255,0.06)' }}
-        className="flex flex-col h-full"
-      >
-        {/* Logo */}
-        <div className="px-6 pt-6 pb-5">
-          <span
-            style={{
-              fontFamily: 'var(--font-manrope)',
-              fontWeight: 700,
-              fontSize: '1.1rem',
-              color: 'var(--color-primary)',
-            }}
-          >
-            ContentMind AI
-          </span>
-        </div>
-
-        {/* Nav */}
-        <div className="flex-1 overflow-y-auto">
-          <SidebarNav />
-        </div>
-
-        {/* User section */}
-        <div className="px-4 py-5 flex items-center gap-3">
-          <div
-            style={{
-              width: 36,
-              height: 36,
-              borderRadius: '50%',
-              background: 'var(--color-primary)',
-              color: '#ffffff',
-              fontFamily: 'var(--font-manrope)',
-              fontWeight: 700,
-              fontSize: '0.95rem',
-              flexShrink: 0,
-            }}
-            className="flex items-center justify-center"
-          >
-            {avatarLetter}
-          </div>
-          <div className="flex flex-col gap-1 min-w-0">
-            <span
-              className="truncate"
-              style={{
-                fontFamily: 'var(--font-inter)',
-                fontWeight: 500,
-                fontSize: '0.8rem',
-                color: 'var(--color-text-primary)',
-              }}
-            >
-              {fullName}
-            </span>
-            <Chip>{tier}</Chip>
-          </div>
-        </div>
-      </aside>
+    <div className="flex flex-col h-screen overflow-hidden">
+      <TopNav avatarLetter={avatarLetter} fullName={fullName} tier={tier} />
 
       {/* Main content */}
       <main
