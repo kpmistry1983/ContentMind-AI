@@ -66,7 +66,7 @@ const PLANS = [
     name: 'Pro',
     price: '$49',
     description: 'For serious builders.',
-    features: ['Unlimited missions', 'Advanced remix engine', 'Analytics'],
+    features: ['Unlimited missions', 'Advanced Remix', 'Analytics'],
     cta: 'Go Pro',
     href: '/signup',
     highlight: false,
@@ -865,7 +865,7 @@ export default function LandingPage() {
             <Link href="/terms" style={{ fontFamily: 'var(--font-inter)', fontSize: '0.825rem', color: '#6b7280', textDecoration: 'none' }}>Terms of Service</Link>
           </div>
           <p style={{ fontFamily: 'var(--font-inter)', fontSize: '0.8rem', color: '#4b5563' }}>
-            © {new Date().getFullYear()} Sun Mistry LLC. All rights reserved.
+            © {new Date().getFullYear()} Sun Ventures. All rights reserved.
           </p>
         </div>
       </footer>
