@@ -4,19 +4,19 @@ import { Zap, Target, Shuffle, ArrowRight, Check, X } from 'lucide-react'
 const FEATURES = [
   {
     icon: Target,
-    title: 'Strategy Hub',
+    title: 'Playbook',
     description:
       'Define your niche, brand voice, and target audience once. ContentMind AI remembers everything and builds every piece of content around your positioning.',
   },
   {
     icon: Zap,
-    title: 'Daily Mission Engine',
+    title: 'Command Center',
     description:
       'Wake up to a personalized content action plan — titles, hooks, and rationale already written. No blank page. No guessing what to post.',
   },
   {
     icon: Shuffle,
-    title: 'Remix Engine',
+    title: 'Remix',
     description:
       'Turn one piece of content into five. Paste any post and instantly get platform-native rewrites for LinkedIn, Instagram, X, and more.',
   },
@@ -48,7 +48,7 @@ const PLANS = [
     name: 'Free',
     price: '$0',
     description: 'Get started, no card needed.',
-    features: ['10 missions/month', 'Strategy Hub', 'Core content generation'],
+    features: ['10 missions/month', 'Playbook', 'Core content generation'],
     cta: 'Start Free',
     href: '/signup',
     highlight: false,
@@ -66,7 +66,7 @@ const PLANS = [
     name: 'Pro',
     price: '$49',
     description: 'For serious builders.',
-    features: ['Unlimited missions', 'Advanced remix engine', 'Analytics'],
+    features: ['Unlimited missions', 'Advanced Remix', 'Analytics'],
     cta: 'Go Pro',
     href: '/signup',
     highlight: false,
@@ -494,7 +494,7 @@ export default function LandingPage() {
             }}
           >
             <p style={{ fontFamily: 'var(--font-inter)', fontSize: '0.8rem', color: '#4b5563', margin: 0 }}>
-              Generated from your Strategy Hub · Tailored to your brand voice
+              Generated from your Playbook · Tailored to your brand voice
             </p>
             <Link
               href="/signup"
@@ -865,7 +865,7 @@ export default function LandingPage() {
             <Link href="/terms" style={{ fontFamily: 'var(--font-inter)', fontSize: '0.825rem', color: '#6b7280', textDecoration: 'none' }}>Terms of Service</Link>
           </div>
           <p style={{ fontFamily: 'var(--font-inter)', fontSize: '0.8rem', color: '#4b5563' }}>
-            © {new Date().getFullYear()} Sun Mistry LLC. All rights reserved.
+            © {new Date().getFullYear()} Sun Ventures. All rights reserved.
           </p>
         </div>
       </footer>

@@ -137,7 +137,7 @@ export default function RemixPage() {
         {/* Header */}
         <div className="mb-8">
           <h1 style={{ fontFamily: 'var(--font-manrope)', fontSize: '2rem', fontWeight: 700, color: 'var(--color-text-primary)', lineHeight: 1.2 }}>
-            Remix Engine
+            Remix
           </h1>
           <p style={{ fontFamily: 'var(--font-inter)', color: '#6b7280', marginTop: 6, fontSize: '0.95rem' }}>
             One idea. Every platform.
