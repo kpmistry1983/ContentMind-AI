@@ -9,6 +9,7 @@ interface Props {
   initialMissions: Mission[]
   niche: string
   canGenerateMore: boolean
+  firstName: string
 }
 
 const ACCENT: Record<Mission['status'], string> = {
@@ -63,7 +64,14 @@ function CompassIcon() {
   )
 }
 
-export default function CommandCenter({ initialMissions, niche, canGenerateMore: initCanGenerate }: Props) {
+function getGreeting() {
+  const h = new Date().getHours()
+  if (h < 12) return 'Good morning'
+  if (h < 17) return 'Good afternoon'
+  return 'Good evening'
+}
+
+export default function CommandCenter({ initialMissions, niche, canGenerateMore: initCanGenerate, firstName }: Props) {
   const [missions, setMissions] = useState<Mission[]>(initialMissions)
   const [dismissingIds, setDismissingIds] = useState<Set<string>>(new Set())
   const [copiedId, setCopiedId] = useState<string | null>(null)
@@ -138,7 +146,7 @@ export default function CommandCenter({ initialMissions, niche, canGenerateMore:
                 lineHeight: 1.2,
               }}
             >
-              Command Center
+              {getGreeting()}, {firstName}! 👋
             </h1>
             <p
               style={{
@@ -148,7 +156,7 @@ export default function CommandCenter({ initialMissions, niche, canGenerateMore:
                 fontSize: '0.95rem',
               }}
             >
-              Your digital sanctuary for strategic output.
+              Here are your content missions for today.
             </p>
           </div>
           {visible.length > 0 && (
@@ -323,30 +331,50 @@ export default function CommandCenter({ initialMissions, niche, canGenerateMore:
 
         {/* Empty state */}
         {isEmpty && (
-          <div className="flex flex-col items-center justify-center py-16 gap-4 text-center">
-            <CompassIcon />
-            <p
-              style={{
-                fontFamily: 'var(--font-manrope)',
-                fontWeight: 700,
-                fontSize: '1.25rem',
-                color: 'var(--color-text-primary)',
-              }}
+          <div className="flex flex-col gap-6">
+            {/* Greeting */}
+            <div
+              style={{ background: 'var(--color-surface-card)', borderRadius: 16, border: '1px solid rgba(255,255,255,0.06)', padding: '28px 28px 24px' }}
+              className="flex items-center justify-between gap-6"
             >
-              No missions yet.
+              <div className="flex flex-col gap-1">
+                <h2 style={{ fontFamily: 'var(--font-manrope)', fontWeight: 700, fontSize: '1.5rem', color: 'var(--color-text-primary)' }}>
+                  {getGreeting()}, {firstName}! 👋
+                </h2>
+                <p style={{ fontFamily: 'var(--font-inter)', fontSize: '0.9rem', color: '#6b7280' }}>
+                  Your strategy is set. Hit the button and ContentMind AI will build your content plan for today.
+                </p>
+              </div>
+              <Button variant="primary" onClick={handleGenerate} className="shrink-0">
+                Generate Today&apos;s Plan
+              </Button>
+            </div>
+
+            {/* How it works */}
+            <p style={{ fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '0.78rem', color: '#6b7280', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+              How it works
             </p>
-            <p
-              style={{
-                fontFamily: 'var(--font-inter)',
-                color: '#6b7280',
-                fontSize: '0.9rem',
-              }}
-            >
-              Let ContentMind AI build today&apos;s action plan.
-            </p>
-            <Button variant="primary" onClick={handleGenerate}>
-              Generate Today&apos;s Plan
-            </Button>
+            <div className="grid grid-cols-3 gap-4">
+              {[
+                { icon: '🎯', title: 'AI builds your plan', body: 'Each day you get 3 content missions tailored to your niche and platforms.' },
+                { icon: '✍️', title: 'Get a ready-made hook', body: 'Every mission comes with an opening hook you can copy and post straight away.' },
+                { icon: '📈', title: 'Track your progress', body: 'Mark missions in-progress or done — your momentum stays visible at a glance.' },
+              ].map(({ icon, title, body }) => (
+                <div key={title} style={{ background: 'var(--color-surface-card)', borderRadius: 14, border: '1px solid rgba(255,255,255,0.06)', padding: '20px' }} className="flex flex-col gap-2">
+                  <span style={{ fontSize: '1.6rem' }}>{icon}</span>
+                  <p style={{ fontFamily: 'var(--font-manrope)', fontWeight: 600, fontSize: '0.9rem', color: 'var(--color-text-primary)' }}>{title}</p>
+                  <p style={{ fontFamily: 'var(--font-inter)', fontSize: '0.8rem', color: '#6b7280', lineHeight: 1.55 }}>{body}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Niche reminder */}
+            <div style={{ background: 'rgba(245,158,11,0.06)', borderRadius: 12, border: '1px solid rgba(245,158,11,0.15)', padding: '14px 18px' }} className="flex items-center gap-3">
+              <span style={{ fontSize: '1.1rem' }}>🧭</span>
+              <p style={{ fontFamily: 'var(--font-inter)', fontSize: '0.82rem', color: '#9ca3af' }}>
+                Your niche: <span style={{ color: 'var(--color-primary)', fontWeight: 600 }}>{niche}</span>
+              </p>
+            </div>
           </div>
         )}
       </div>
