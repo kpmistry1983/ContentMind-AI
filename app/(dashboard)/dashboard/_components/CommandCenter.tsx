@@ -1,8 +1,10 @@
 'use client'
 
 import { useState, useCallback } from 'react'
+import Link from 'next/link'
 import Button from '@/components/ui/Button'
 import Chip from '@/components/ui/Chip'
+import { Pencil } from 'lucide-react'
 import type { Mission } from '@/types/index'
 
 interface Props {
@@ -159,11 +161,21 @@ export default function CommandCenter({ initialMissions, niche, canGenerateMore:
               Here are your content missions for today.
             </p>
           </div>
-          {visible.length > 0 && (
-            <Chip className="mt-1 shrink-0">
-              {visible.length} Mission{visible.length !== 1 ? 's' : ''}
-            </Chip>
-          )}
+          <div className="flex items-center gap-2 mt-1 shrink-0">
+            {visible.length > 0 && (
+              <Chip>
+                {visible.length} Mission{visible.length !== 1 ? 's' : ''}
+              </Chip>
+            )}
+            <Link
+              href="/dashboard/strategy"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-[10px] transition-colors hover:bg-white/5"
+              style={{ border: '1px solid rgba(255,255,255,0.1)', textDecoration: 'none' }}
+            >
+              <Pencil size={12} style={{ color: '#9ca3af' }} />
+              <span style={{ fontFamily: 'var(--font-inter)', fontSize: '0.78rem', color: '#9ca3af' }}>Edit Strategy</span>
+            </Link>
+          </div>
         </div>
 
         {/* All-done banner */}
