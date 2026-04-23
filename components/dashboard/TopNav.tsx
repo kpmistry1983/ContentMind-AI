@@ -6,9 +6,9 @@ import { LayoutDashboard, Home, Shuffle, CreditCard, Settings, LogOut } from 'lu
 import { getSupabaseBrowserClient } from '@/lib/supabase/client'
 
 const NAV_ITEMS = [
-  { label: 'Dashboard', href: '/dashboard', icon: LayoutDashboard, exact: true },
-  { label: 'Strategy', href: '/dashboard/strategy', icon: Home, exact: false },
-  { label: 'Remix Engine', href: '/dashboard/remix', icon: Shuffle, exact: false },
+  { label: 'Home', href: '/dashboard', icon: LayoutDashboard, exact: true },
+  { label: 'Playbook', href: '/dashboard/strategy', icon: Home, exact: false },
+  { label: 'Remix', href: '/dashboard/remix', icon: Shuffle, exact: false },
   { label: 'Pricing', href: '/dashboard/pricing', icon: CreditCard, exact: false },
   { label: 'Settings', href: '/dashboard/settings', icon: Settings, exact: false },
 ]

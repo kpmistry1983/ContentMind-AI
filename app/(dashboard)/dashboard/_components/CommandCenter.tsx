@@ -173,7 +173,7 @@ export default function CommandCenter({ initialMissions, niche, canGenerateMore:
               style={{ border: '1px solid rgba(255,255,255,0.1)', textDecoration: 'none' }}
             >
               <Pencil size={12} style={{ color: '#9ca3af' }} />
-              <span style={{ fontFamily: 'var(--font-inter)', fontSize: '0.78rem', color: '#9ca3af' }}>Edit Strategy</span>
+              <span style={{ fontFamily: 'var(--font-inter)', fontSize: '0.78rem', color: '#9ca3af' }}>Edit Playbook</span>
             </Link>
           </div>
         </div>

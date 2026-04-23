@@ -167,7 +167,7 @@ export default function StrategyPage() {
         {/* Header */}
         <div className="mb-4">
           <h1 style={{ fontFamily: 'var(--font-manrope)', fontSize: '1.6rem', fontWeight: 700, color: 'var(--color-text-primary)', lineHeight: 1.2 }}>
-            Strategy Hub
+            Your Playbook
           </h1>
           <p style={{ fontFamily: 'var(--font-inter)', color: '#6b7280', marginTop: 4, fontSize: '0.875rem' }}>
             Build your content strategy in 5 quick steps.
